@@ -1,0 +1,61 @@
+@import url('../../index.scss');
+
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--Grey);
+    border-bottom: solid var(--Red) 2px;
+    width: 100%;
+    overflow-x: hidden;
+
+
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 20px;
+    margin-right: 20px;
+
+    li {
+        padding: 0px 10px;
+        font-size: 23px;
+        font-weight: 700;
+    }
+}
+
+h1 {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 30px;
+    padding: 20px;
+    
+}
+
+a {
+    text-decoration: none;
+} 
+
+
+@media only screen and (max-width: 600px) {
+
+    .Header {
+        flex-direction: column;
+        text-align: center;
+
+        h1 {
+            font-size: 30px;
+            padding: 5px;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 700;
+            padding: 5px 0px 20px 10px;
+
+        }
+    }
+}
