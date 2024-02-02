@@ -1,22 +1,32 @@
+import { DataMusicApi } from "../../api/dataMusicAPi";
 import "./index.scss";
+import { useState, useEffect } from "react";
+import NoticeCard from "../../components/noticeCard/NoticeCard";
 
 const Noticias = () => {
+  const [noticias, setNoticias] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const respostaNoticias = await DataMusicApi.getNotices();
+      setNoticias(respostaNoticias);
+      console.log('Resposta de getNotices:', respostaNoticias);
+    } catch (erro) {
+      console.error('Erro ao buscar notícias:', erro);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <div className="Noticias">
       <h1> Noticias</h1>
       <div className="Noticias-quadrados">
-        <a href="/Noticia"><div className="Noticia-quadrado"> Noticia 1</div></a>
-        <div className="Noticia-quadrado">Noticia 2</div>
-        <div className="Noticia-quadrado">Noticia 3</div>
-        <div className="Noticia-quadrado">Noticia 4</div>
-        <div className="Noticia-quadrado">Noticia 5</div>
-        <div className="Noticia-quadrado">Noticia 6</div>
-        <div className="Noticia-quadrado">Noticia 7</div>
-        <div className="Noticia-quadrado">Noticia 8</div>
-        <div className="Noticia-quadrado">Noticia 9</div>
-        <div className="Noticia-quadrado">Noticia 10</div>
-        <div className="Noticia-quadrado">Noticia 11</div>
-        <div className="Noticia-quadrado">Noticia 12</div>
+        {noticias.map((noticia) => (
+          <NoticeCard key={noticia._id} noticia={noticia} />
+        ))}
       </div>
     </div>
   );

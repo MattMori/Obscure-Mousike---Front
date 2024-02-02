@@ -3,7 +3,7 @@ import "./index.scss";
 const Playlists = () => {
   return (
     <div className="Playlists">
-      <h1>Playlists Por Gênero</h1>
+      <h1>Playlists </h1>
       <div className="Playlists-quadrados">
         <div className="Playlists-quadrado">
           <iframe

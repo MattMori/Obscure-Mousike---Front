@@ -1,0 +1,57 @@
+.formulario-Banda {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+
+    label {
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    input,
+    textarea {
+        min-height: 30px;
+        max-height: 150px;
+        border-radius: 5px;
+        border: none;
+        margin: 10px;
+        padding: 5px;
+        border-radius: 15px;
+        width: 450px;
+        color: white;
+        border: solid var(--Red) 1px;
+        font-size: 18px;
+        text-align: center;
+        &:focus {
+            outline: none;
+            border: solid var(--Red) 2px;
+        }
+
+    }
+
+    button {
+        background-color: #1a1a1a;
+        color: white;
+        padding: 20px 50px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        margin-top: 15px;
+        transition: background-color 0.3s ease;
+        border: solid var(--Red) 2px;
+        transition: transform 0.4s ease-in-out;
+        font-size: 18px;
+
+    }
+
+    button:hover {
+        background-color: black;
+        border: solid var(--Red) 2px;
+        transform: translateY(-5px);
+    }
+
+}

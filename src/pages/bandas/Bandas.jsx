@@ -1,16 +1,34 @@
 import "./index.scss";
+import { useState, useEffect } from "react";
+import { DataMusicApi } from "../../api/dataMusicAPi";
+import BandCard from "../../components/bandCard/BandCard";
 
 const Bandas = () => {
+  const [Bandas, setBandas] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const respostaBandas = await DataMusicApi.getBands();
+      setBandas(respostaBandas);
+      console.log('Resposta de getBands:', respostaBandas);
+    } catch (erro) {
+      console.error('Erro ao buscar bandas:', erro);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+
+
   return (
     <div className="Bandas">
             <h1> Bandas</h1>
         <div className="Bandas-quadrados">
-        <a href="/Banda"><div className="Bandas-quadrado"> Banda 1</div></a>
-          <div className="Bandas-quadrado">Banda 2</div>
-          <div className="Bandas-quadrado">Banda 3</div>
-          <div className="Bandas-quadrado">Banda 4</div>
-          <div className="Bandas-quadrado">Banda 5</div>
-          <div className="Bandas-quadrado">Banda 6</div>
+          {Bandas.map((banda) => (
+            <BandCard key={banda._id} banda={banda} />
+          ))}
         </div>      
     </div>
   );

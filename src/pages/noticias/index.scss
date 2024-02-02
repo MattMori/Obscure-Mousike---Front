@@ -13,23 +13,27 @@
         flex-wrap: wrap;
         justify-content: center;
     }
-    .Noticia-quadrado {
-        width: 350px;
-        height: 350px;
-        background-color: #000000ad;
-        border: solid var(--Red) 2px;
-        border-radius: 30px;
-        box-shadow: 0px 10px 12px rgb(0, 0, 0);
-        margin: 20px;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        transition: transform 0.3s; 
-        transform: scale(1);
+}
+
+.CriarNoticia-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    background-color: #000000ad;
+    border: solid var(--Red) 2px;
+    border-radius: 30px;
+    overflow-x: hidden;
+    box-shadow: 0px 10px 12px rgb(0, 0, 0);
+
+    h1 {
+        font-size: 80px;
+        filter: drop-shadow(0px 15px 8px rgb(0, 0, 0));
     }
-    
-    .Noticia-quadrado:hover {
-        transform: scale(1.10); 
-    }
-    
-    }
+}
